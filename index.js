@@ -3,9 +3,10 @@ const { connection } = require("./db");
 const { Userrouter } = require("./routes/User.route");
 const { Postrouter } = require("./routes/Postrouter");
 const { Auth } = require("./middleware/Auth");
+var cors = require('cors');
 
 let app=express();
-
+app.use(cors());
 app.use(express.json());
 app.get("/",(req,res)=>{
     res.send("Home Page")
